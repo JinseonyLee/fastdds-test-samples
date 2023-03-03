@@ -18,4 +18,5 @@ participants:
     listening-addresses:                           # 9
       - ip: 10.0.18.239                         # 10
         port: 9843                                # 11
+        #external-port: 9843
         transport: tcp

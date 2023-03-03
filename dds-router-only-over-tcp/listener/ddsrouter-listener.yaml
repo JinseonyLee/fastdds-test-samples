@@ -7,9 +7,9 @@ participants:
     kind: local
     domain: 0
     listening-addresses:                        # WAN Participant Listening Addresses
-      - ip: 127.0.0.1                            # Use UDP by default
-        port: 49154
-        #external-port: 49155
+      - ip: 0.0.0.0                            # Use UDP by default
+        port: 49152
+        #external-port: 49153
         transport: tcp
 ##################################
 # ROS DISCOVERY SERVER
@@ -20,15 +20,17 @@ participants:
     discovery-server-guid:
       id: 0                     # External WAN Discovery Server id => GuidPrefix = 01.0f.04.00.00.00.00.00.00.00.ca.fe
       ros-discovery-server: true
-    listening-addresses:                        # WAN Participant Listening Addresses
-      - ip: 10.0.15.164                            # Use UDP by default
-        port: 49154
-        transport: tcp
+      #listening-addresses:                        # WAN Participant Listening Addresses
+      #- ip: 10.0.1.21                            # Use UDP by default
+      #  port: 49152
+        #external-port: 49153
+        #  transport: tcp
     connection-addresses:           # WAN Discovery Server Connection Addresses
       - discovery-server-guid:
           id: 0                     # External WAN Discovery Server id => GuidPrefix = 01.0f.04.00.00.00.00.00.00.00.ca.fe
           ros-discovery-server: true
         addresses:
           - ip: 10.0.18.239            # IP = 8.8.8.8
+            #external-port: 9843
             port: 9843            # Port = 11666
             transport: tcp          # Transport = UDP
